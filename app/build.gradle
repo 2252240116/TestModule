@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'WMRouter'
+
+
+android {
+    compileSdkVersion Integer.valueOf(COMPILE_SDK_VERSION)
+    buildToolsVersion BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        applicationId APPLICATION_ID
+        minSdkVersion Integer.valueOf(MIN_SDK_VERSION)
+        targetSdkVersion Integer.valueOf(TARGET_SDK_VERSION)
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters "armeabi"
+        }
+
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "Integer", "API_VERSION", "$API_VERSION"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            buildConfigField "Integer", "API_VERSION", "$API_VERSION"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/DEPENDENCIES'
+        pickFirst 'META-INF/library_release.kotlin_module'
+        pickFirst 'lib/x86/libc++_shared.so'
+        exclude 'META-INF/proguard/coroutines.pro'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$KOTLIN_VERSION"
+    implementation "com.gaodun.android:gdcommonbiz:$GD_COMMON_BIZ_VERSION"
+    implementation "com.gaodun.android.module:gdlogin:$GD_LOGIN_MODULE_VERSION"
+    kapt "com.sankuai.waimai.router:compiler:$GD_ROUTER_VERSION"
+    annotationProcessor "com.sankuai.waimai.router:compiler:$GD_ROUTER_VERSION"
+    implementation project(path: ':testmodule')
+    testImplementation "junit:junit:$JUNIT_VERSION"
+    androidTestImplementation "androidx.test.ext:junit:$JUNIT_EXT_VERSION"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$ESPRESSO_VERSION"
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$LEAK_CANARY_VERSION"
+}

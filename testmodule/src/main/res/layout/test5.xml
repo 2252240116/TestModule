@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ResourceName">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:background="#bebebe"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="#bebebe"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    width=0 表示mactch_content-->
+    <!--    layout_constraintWidth_default 设置边缘约束 默认尺寸方式wrap
+          ,默认的为spread-->
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="TextViewTedddddddddddddddddddddddddd"
+        app:layout_constraintBottom_toBottomOf="@id/textView5"
+        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/textView5"
+        app:layout_constraintWidth_default="wrap"
+        tools:layout_editor_absoluteY="73dp" />
+
+    <!--    设置wrap_content,可以配合layout_constrainedWidth(超长限制)亦能实现-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView6"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginEnd="16dp"-->
+    <!--        app:layout_constrainedWidth="true"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/textView5"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/textView5"-->
+    <!--        android:text="TextViewTedddddddddddddddddddddddddd"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/textView5"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/textView4"-->
+    <!--        tools:layout_editor_absoluteY="73dp" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

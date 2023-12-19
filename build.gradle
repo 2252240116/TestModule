@@ -1,0 +1,91 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        // 高顿Maven Release库
+//        maven {
+//            url "http://nexus.gaodunwangxiao.com/repository/maven-public/"
+//            credentials {
+//                username = "android"
+//                password = "android"
+//            }
+//        }
+//        maven {
+//            // 高顿Maven Snapshot库
+//            url "http://nexus.gaodunwangxiao.com/repository/maven-snapshots/"
+//            credentials {
+//                username = "android"
+//                password = "android"
+//            }
+//        }
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url 'https://developer.huawei.com/repo/' }
+        //处理Gradle中的这个文件下载慢的问题
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        //添加 Sensors Analytics maven 库地址
+        maven { url 'https://dl.bintray.com/zouyuhan/maven' }
+        //Umeng Push
+        maven { url 'https://dl.bintray.com/umsdk/release' }
+
+        maven {
+            url 'http://nexus-app.bokecc.com/repository/sdk-group/'
+        }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$GRADLE_VERSION"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
+        //美团路由插件
+        classpath "com.sankuai.waimai.router:plugin:$GD_ROUTER_VERSION"
+        //高顿maven上传插件
+//        classpath "com.gaodun.android.plugin:gdmaven:$GD_MAVEN_VERSION"
+        //代码检查插件
+//        classpath "com.liulishuo.okcheck:gradle:$GD_CODE_CHECK_VERSION"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        // 高顿Maven Release库
+//        maven {
+//            url "http://nexus.gaodunwangxiao.com/repository/maven-public/"
+//            credentials {
+//                username = "android"
+//                password = "android"
+//            }
+//        }
+//        maven {
+//            // 高顿Maven Snapshot库
+//            url "http://nexus.gaodunwangxiao.com/repository/maven-snapshots/"
+//            credentials {
+//                username = "android"
+//                password = "android"
+//            }
+//        }
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url 'https://developer.huawei.com/repo/' }
+        //处理Gradle中的这个文件下载慢的问题
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        //添加 Sensors Analytics maven 库地址
+        maven { url 'https://dl.bintray.com/zouyuhan/maven' }
+        //Umeng Push
+        maven { url 'https://dl.bintray.com/umsdk/release' }
+
+        maven {
+            url 'http://nexus-app.bokecc.com/repository/sdk-group/'
+        }
+    }
+//    apply plugin: 'okcheck'
+//    okcheck {
+//        //检测报告生成目录
+//        destination = buildDir
+//        //app模块不做检测
+//        excludeModules = ['app']
+//    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

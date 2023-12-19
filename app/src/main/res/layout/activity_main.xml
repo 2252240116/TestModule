@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_enter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="enter" />
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="login" />
+
+            <Button
+                android:id="@+id/coroutinues"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="coroutinues" />
+
+            <Button
+                android:id="@+id/chain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="责任链设计模式处理业务" />
+
+            <Button
+                android:id="@+id/interceptor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="拦截器设计模式处理业务" />
+
+            <Button
+                android:id="@+id/kotlin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kotlin高阶" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>
